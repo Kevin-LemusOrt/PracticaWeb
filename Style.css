@@ -1,38 +1,70 @@
 :root{
-    /* colores de los div`s*/
-    --bg-color1: #223a5c; 
-    --bg-color2: #1a6c71;
-    --bg-color3: #54a22db9;
-    --bg-color4: #631d92;
-    --bg-color5: #d5406a;
-    --bg-color6: #c0974f;
-    --bg-color7: #7f8a36c4;
-    --bg-color8: #5d2b60d1;
+    /* Apollo 11 */
+    --bg-color1: #D4A72C;
 
-    --text-color: #bac0c7;
+    /* Sputnik 1 */
+    --bg-color2: #7C8A99;
+
+    /* Artemis II */
+    --bg-color3: #4A90C2;
+
+    /* Voyager 1 */
+    --bg-color4: #6554A4;
+
+    /* Hubble */
+    --bg-color5: #347EA8;
+
+    /* James Webb */
+    --bg-color6: #9A4D8C;
+
+    /* Estación Espacial Internacional */
+    --bg-color7: #319B9B;
+
+    /* Laika */
+    --bg-color8: #B85C5C;
+
+    --text-color: #18202A;
+    --body-color: #E8EDF2;
 }
 
 
-.contenedorPrincipal.Cambio{
-    --bg-color1: #223a5c2e; 
-    --bg-color2: #1a6c712e;
-    --bg-color3: #54a22d2e;
-    --bg-color4: #631d922e;
-    --bg-color5: #d5406a2e;
-    --bg-color6: #c0974f2e;
-    --bg-color7: #7f8a362e;
-    --bg-color8: #5d2b602e;
+/* =========================
+    TEMA OSCURO
+   ========================= */
 
-    --text-color: #bac0c72e;
+body.Cambio{
+
+    --bg-color1: #7A5B0B;
+    --bg-color2: #39444F;
+    --bg-color3: #193F5C;
+    --bg-color4: #342B5C;
+    --bg-color5: #173D54;
+    --bg-color6: #54284D;
+    --bg-color7: #17585A;
+    --bg-color8: #693333;
+
+    --text-color: #E6EDF3;
+    --body-color: #0B0F17;
 }
+
+
+/* =========================
+    CUERPO
+   ========================= */
 
 body{
-    background-color: #1c1c1c;
+    background-color: var(--body-color);
+    transition: background-color 0.5s ease-in-out;
 }
 
 h1{
     color: var(--text-color);
 }
+
+
+/* =========================
+    CONTENEDOR
+   ========================= */
 
 .contenedor{
     display: flex;
@@ -41,13 +73,17 @@ h1{
     flex-wrap: wrap;
 }
 
+
+/* =========================
+    DIVS
+   ========================= */
+
 .KYLO_div1{
     background-color: var(--bg-color1);
     color: var(--text-color);
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
 
@@ -57,7 +93,6 @@ h1{
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
 
@@ -67,7 +102,6 @@ h1{
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
 
@@ -77,7 +111,6 @@ h1{
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
 
@@ -87,7 +120,6 @@ h1{
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
 
@@ -97,7 +129,6 @@ h1{
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
 
@@ -107,7 +138,6 @@ h1{
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
 
@@ -117,9 +147,13 @@ h1{
     margin: 0;
     padding: 2rem;
     width: 45%;
-
     box-sizing: border-box;
 }
+
+
+/* =========================
+    BOTÓN
+   ========================= */
 
 .btnCambio{
     position: relative;
@@ -127,11 +161,26 @@ h1{
 
     padding: 1rem 2rem;
     font-size: 1.4rem;
+
     background-color: var(--bg-color7);
     color: var(--text-color);
+
     border-radius: 20px;
     border: 1px solid var(--text-color);
+
+    transition:
+        background-color 0.5s ease-in-out,
+        color 0.5s ease-in-out;
 }
+
+.btnCambio:hover{
+    cursor: pointer;
+}
+
+
+/* =========================
+    IMÁGENES
+   ========================= */
 
 .KYLO_div1 img,
 .KYLO_div2 img,
@@ -140,16 +189,21 @@ h1{
 .KYLO_div5 img,
 .KYLO_div6 img,
 .KYLO_div7 img,
-.KYLO_div8 img {
+.KYLO_div8 img{
     width: 100%;
     max-width: 250px;
     height: 180px;
     object-fit: cover;
 }
 
-/* Hovers */
 
-/* opacidad a los divs */
+/* =========================
+    HOVERS
+   ========================= */
+
+/* Al pasar sobre el botón,
+   los divs se hacen un poco más opacos */
+
 .contenedorPrincipal:has(.btnCambio:hover) .KYLO_div1,
 .contenedorPrincipal:has(.btnCambio:hover) .KYLO_div2,
 .contenedorPrincipal:has(.btnCambio:hover) .KYLO_div3,
@@ -157,13 +211,15 @@ h1{
 .contenedorPrincipal:has(.btnCambio:hover) .KYLO_div5,
 .contenedorPrincipal:has(.btnCambio:hover) .KYLO_div6,
 .contenedorPrincipal:has(.btnCambio:hover) .KYLO_div7,
-.contenedorPrincipal:has(.btnCambio:hover) .KYLO_div8 {
+.contenedorPrincipal:has(.btnCambio:hover) .KYLO_div8{
     opacity: 0.5;
     transition: opacity 0.3s ease;
     transform: translateY(-5px) scale(1.02);
 }
 
-/* Elimnar el texto y dejar solo la imagen */
+
+/* Ocultar texto */
+
 .KYLO_div1 p,
 .KYLO_div2 p,
 .KYLO_div3 p,
@@ -171,11 +227,12 @@ h1{
 .KYLO_div5 p,
 .KYLO_div6 p,
 .KYLO_div7 p,
-.KYLO_div8 p {
+.KYLO_div8 p{
     display: none;
 }
 
-/* Elimnar la imagen y dejar solo el texto */
+
+/* Ocultar imagen al pasar sobre el div */
 
 .KYLO_div1:hover img,
 .KYLO_div2:hover img,
@@ -184,11 +241,13 @@ h1{
 .KYLO_div5:hover img,
 .KYLO_div6:hover img,
 .KYLO_div7:hover img,
-.KYLO_div8:hover img {
+.KYLO_div8:hover img{
     display: none;
 }
 
-/* cuando el cursor pase por cada div se intercalan las funciones de antes */
+
+/* Mostrar texto */
+
 .KYLO_div1:hover p,
 .KYLO_div2:hover p,
 .KYLO_div3:hover p,
@@ -196,15 +255,14 @@ h1{
 .KYLO_div5:hover p,
 .KYLO_div6:hover p,
 .KYLO_div7:hover p,
-.KYLO_div8:hover p {
+.KYLO_div8:hover p{
     display: block;
 }
 
-.btnCambio:hover{
-    cursor: pointer;
-}
 
-/* Tamaños de pantalla */
+/* =========================
+    RESPONSIVE
+   ========================= */
 
 @media screen and (max-width: 1024px){
 
@@ -215,7 +273,7 @@ h1{
     .KYLO_div5,
     .KYLO_div6,
     .KYLO_div7,
-    .KYLO_div8 {
+    .KYLO_div8{
         width: 45%;
     }
 
@@ -231,7 +289,7 @@ h1{
     .KYLO_div5,
     .KYLO_div6,
     .KYLO_div7,
-    .KYLO_div8 {
+    .KYLO_div8{
         width: 75%;
     }
 
@@ -240,6 +298,7 @@ h1{
     }
 
 }
+
 
 @media screen and (max-width: 480px){
 
@@ -250,7 +309,7 @@ h1{
     .KYLO_div5,
     .KYLO_div6,
     .KYLO_div7,
-    .KYLO_div8 {
+    .KYLO_div8{
         width: 90%;
     }
 

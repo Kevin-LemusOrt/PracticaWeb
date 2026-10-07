@@ -1,14 +1,14 @@
 const btnCambio = document.querySelector('#divCambio');
-const contenedorPrincipal = document.querySelector('.contenedorPrincipal');
+const body = document.body;
 
 btnCambio.addEventListener('click', () => {
 
-    contenedorPrincipal.classList.toggle('Cambio');
+    body.classList.toggle('Cambio');
 
-    if(contenedorPrincipal.classList.contains('Cambio')){
-        btnCambio.textContent = 'Modo normal';
+    if(body.classList.contains('Cambio')){
+        btnCambio.textContent = 'Modo claro';
     }else{
-        btnCambio.textContent = 'Modo transparente';
+        btnCambio.textContent = 'Modo oscuro';
     }
 
 });
